@@ -11,13 +11,13 @@ const Landing: React.FC = () => {
       </video>
       <div className="main">
         <div className="content">
-          <h1>Bienvenue sur CineApp !</h1>
+          <h1>Welcome on CineApp !</h1>
           <div className="buttons">
             <a href="/login" className="btn btn-out">
-              Se connecter
+              Log in
             </a>
             <a href="/register" className="btn btn-out">
-              S'inscrire
+              Sign up
             </a>
           </div>
         </div>

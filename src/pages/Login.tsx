@@ -34,10 +34,10 @@ const Login: React.FC = () => {
       </video>
       <div className="main">
 
-        <h2>Connexion</h2>
+        <h2>Log in</h2>
         <form className="form" onSubmit={handleLogin}>
           <div className="form-group">
-            <label htmlFor="email">Email :</label>
+            <label htmlFor="email">Email:</label>
             <input
               type="email"
               id="email"
@@ -48,7 +48,7 @@ const Login: React.FC = () => {
           </div>
 
           <div className="form-group">
-            <label htmlFor="password">Mot de passe :</label>
+            <label htmlFor="password">Password:</label>
             <input
               type="password"
               id="password"
@@ -60,7 +60,7 @@ const Login: React.FC = () => {
 
           {errorMessage && <p className="error-message">{errorMessage}</p>}
 
-          <button type="submit" className="btn btn-out">Se connecter</button>
+          <button type="submit" className="btn btn-out">Log in</button>
         </form>
       </div>
     </div>

@@ -56,9 +56,11 @@ h2 {
 .movie-card {
   background: #f5f5f1;
   border-radius: 10px;
-  padding: 10px;
   text-align: center;
   transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .movie-card:hover {
@@ -67,8 +69,7 @@ h2 {
 
 .movie-poster {
   width: 100%;
-  border-radius: 10px;
-  margin-bottom: 15px;
+  border-radius: 10px 10px 0 0;
 }
 
 .movie-title {
@@ -81,9 +82,8 @@ h2 {
 .movie-overview {
   font-size: 14px;
   color: #221f1f;
-  height: 60px;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  min-height: 60px;
+  margin: 0 10px;
 }
 
 .movie-release-date {

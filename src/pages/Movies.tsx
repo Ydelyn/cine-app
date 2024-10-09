@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import '../styles/Movies.css';
 
 const API_KEY = '7c6ba241ae896589000f37feed1efef7';
-const MOVIES_URL = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=fr-FR&page=1`;
+const MOVIES_URL = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-EN&page=1`;
 
 interface Movie {
   id: number;
@@ -58,15 +58,15 @@ const Movies: React.FC = () => {
           </div>
           <nav>
             <button className="btn-header">
-              Mon Profil
+              Profile
             </button>
             <button className="btn-header" onClick={handleLogout}>
-              Déconnexion
+              Logout
             </button>
           </nav>
         </div>
       </header>
-      <h2 className='movies-title'>Films Populaires</h2>
+      <h2 className='movies-title'>Popular movies</h2>
 
       <div className="movies-grid">
         {movies.map((movie) => (
@@ -77,8 +77,8 @@ const Movies: React.FC = () => {
               className="movie-poster"
             />
             <h2 className="movie-title">{movie.title}</h2>
-            <p className="movie-overview">{movie.overview}</p>
-            <p className="movie-release-date">Sortie : {movie.release_date}</p>
+            <p className="movie-overview">{movie.overview.substring(0,100)}</p>
+            <p className="movie-release-date">Release date: {movie.release_date}</p>
           </div>
         ))}
       </div>

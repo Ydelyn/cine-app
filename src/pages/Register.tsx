@@ -48,10 +48,10 @@ const Register: React.FC = () => {
         <source src={videoPath} type='video/mp4' />
       </video>
       <div className="main">
-        <h2>Créer un compte</h2>
+        <h2>Sign up</h2>
         <form className="form" onSubmit={handleSubmit}>
           <div className="form-group">
-            <label htmlFor="username">Nom d'utilisateur :</label>
+            <label htmlFor="username">Username:</label>
             <input
               type="text"
               id="username"
@@ -62,7 +62,7 @@ const Register: React.FC = () => {
           </div>
 
           <div className="form-group">
-            <label htmlFor="email">Email :</label>
+            <label htmlFor="email">Email:</label>
             <input
               type="email"
               id="email"
@@ -73,7 +73,7 @@ const Register: React.FC = () => {
           </div>
 
           <div className="form-group">
-            <label htmlFor="password">Mot de passe :</label>
+            <label htmlFor="password">Password:</label>
             <input
               type="password"
               id="password"
@@ -83,7 +83,7 @@ const Register: React.FC = () => {
             />
           </div>
 
-          <button type="submit" className="btn btn-out">S'inscrire</button>
+          <button type="submit" className="btn btn-out">Sign up</button>
         </form>
       </div>
     </div>
