@@ -8,6 +8,8 @@ const Login: React.FC = () => {
   const [errorMessage, setErrorMessage] = useState('');
   const navigate = useNavigate();
 
+  const videoPath = "/popcorn.mp4";
+
   const handleLogin = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
@@ -27,34 +29,40 @@ const Login: React.FC = () => {
 
   return (
     <div className="login-container">
-      <h2>Connexion</h2>
-      <form className="login-form" onSubmit={handleLogin}>
-        <div className="form-group">
-          <label htmlFor="email">Email :</label>
-          <input
-            type="email"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
+      <video className="background-video-filter" autoPlay muted loop>
+        <source src={videoPath} type='video/mp4'/>
+      </video>
+      <div className="main">
 
-        <div className="form-group">
-          <label htmlFor="password">Mot de passe :</label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
+        <h2>Connexion</h2>
+        <form className="form" onSubmit={handleLogin}>
+          <div className="form-group">
+            <label htmlFor="email">Email :</label>
+            <input
+              type="email"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
 
-        {errorMessage && <p className="error-message">{errorMessage}</p>}
+          <div className="form-group">
+            <label htmlFor="password">Mot de passe :</label>
+            <input
+              type="password"
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
 
-        <button type="submit" className="login-btn">Se connecter</button>
-      </form>
+          {errorMessage && <p className="error-message">{errorMessage}</p>}
+
+          <button type="submit" className="btn btn-out">Se connecter</button>
+        </form>
+      </div>
     </div>
   );
 };

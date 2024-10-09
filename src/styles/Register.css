@@ -6,20 +6,6 @@
     background: #e0e5ec; /* Couleur de fond principale */
   }
   
-  .register-form {
-    width: 350px;
-    padding: 30px;
-    background: #e0e5ec;
-    box-shadow: 8px 8px 16px #c5c8ce, -8px -8px 16px #ffffff; /* Effet de relief */
-    border-radius: 15px;
-  }
-  
-  h2 {
-    text-align: center;
-    margin: 1em;
-    color: #333;
-  }
-  
   .form-group {
     margin-bottom: 20px;
   }
@@ -28,19 +14,6 @@
     display: block;
     margin-bottom: 8px;
     color: #333;
-  }
-  
-  .form-group input {
-    width: 100%;
-    padding: 15px;
-    border: none;
-    border-radius: 10px;
-    background: #e0e5ec;
-    box-shadow: inset 8px 8px 16px #c5c8ce, inset -8px -8px 16px #ffffff; /* Effet de relief interne */
-    font-size: 16px;
-    color: #333;
-    outline: none;
-    transition: box-shadow 0.3s ease;
   }
   
   .form-group input:focus {

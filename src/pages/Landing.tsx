@@ -1,36 +1,25 @@
 import React from 'react';
-import YouTube from 'react-youtube';
-import '../styles/App.css';
+import '../styles/Landing.css';
 
 const Landing: React.FC = () => {
-  const videoId = 'u35WIs62R2M';
-
-  const videoOptions = {
-    height: '100%',
-    width: '100%',
-    playerVars: {
-      autoplay: 1,
-      mute: 1,
-      loop: 1,
-      playlist: videoId, 
-    },
-  };
+  const videoPath = "/popcorn.mp4";
 
   return (
-    <div className="App">
-      <div className="youtube-background">
-        <YouTube videoId={videoId} opts={videoOptions} className="youtube-video" />
-      </div>
-
-      <div className="content">
-        <h1>Bienvenue sur CineApp !</h1>
-        <div className="buttons">
-          <a href="/login" className="btn btn-out">
-            Se connecter
-          </a>
-          <a href="/register" className="btn btn-out">
-            S'inscrire
-          </a>
+    <div className="app">
+      <video className="background-video" autoPlay muted loop>
+        <source src={videoPath} type='video/mp4'/>
+      </video>
+      <div className="main">
+        <div className="content">
+          <h1>Bienvenue sur CineApp !</h1>
+          <div className="buttons">
+            <a href="/login" className="btn btn-out">
+              Se connecter
+            </a>
+            <a href="/register" className="btn btn-out">
+              S'inscrire
+            </a>
+          </div>
         </div>
       </div>
     </div>

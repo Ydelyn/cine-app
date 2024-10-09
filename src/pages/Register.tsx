@@ -10,7 +10,9 @@ const Register: React.FC = () => {
 
   const navigate = useNavigate();
 
- 
+  const videoPath = "/popcorn.mp4";
+
+
   useEffect(() => {
     const users = Object.keys(localStorage)
       .filter((key) => key.startsWith('user_'))
@@ -42,43 +44,48 @@ const Register: React.FC = () => {
 
   return (
     <div className="register-container">
-      <h2>Créer un compte</h2>
-      <form className="register-form" onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="username">Nom d'utilisateur :</label>
-          <input
-            type="text"
-            id="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-          />
-        </div>
+      <video className="background-video-filter" autoPlay muted loop>
+        <source src={videoPath} type='video/mp4' />
+      </video>
+      <div className="main">
+        <h2>Créer un compte</h2>
+        <form className="form" onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label htmlFor="username">Nom d'utilisateur :</label>
+            <input
+              type="text"
+              id="username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+            />
+          </div>
 
-        <div className="form-group">
-          <label htmlFor="email">Email :</label>
-          <input
-            type="email"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
+          <div className="form-group">
+            <label htmlFor="email">Email :</label>
+            <input
+              type="email"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
 
-        <div className="form-group">
-          <label htmlFor="password">Mot de passe :</label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
+          <div className="form-group">
+            <label htmlFor="password">Mot de passe :</label>
+            <input
+              type="password"
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
 
-        <button type="submit" className="register-btn">S'inscrire</button>
-      </form>
+          <button type="submit" className="btn btn-out">S'inscrire</button>
+        </form>
+      </div>
     </div>
   );
 };

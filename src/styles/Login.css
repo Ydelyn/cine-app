@@ -1,78 +1,91 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: 'Arial', sans-serif;
-    background: #e0e5ec; /* Fond principal pour le style neumorphique */
-  }
-  
-  .login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .login-form {
-    width: 350px;
-    padding: 30px;
-    background: #e0e5ec;
-    box-shadow: 8px 8px 16px #c5c8ce, -8px -8px 16px #ffffff; /* Effet de relief */
-    border-radius: 15px;
-  }
-  
-  h2 {
-    text-align: center;
-    margin: 1em;
-    color: #333;
-  }
-  
-  .form-group {
-    margin-bottom: 20px;
-  }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 8px;
-    color: #333;
-  }
-  
-  .form-group input {
-    width: 100%;
-    padding: 15px;
-    border: none;
-    border-radius: 10px;
-    background: #e0e5ec;
-    box-shadow: inset 8px 8px 16px #c5c8ce, inset -8px -8px 16px #ffffff;
-    font-size: 16px;
-    color: #333;
-    outline: none;
-    transition: box-shadow 0.3s ease;
-  }
-  
-  .form-group input:focus {
-    box-shadow: inset 4px 4px 8px #c5c8ce, inset -4px -4px 8px #ffffff;
-  }
-  
-  .login-btn {
-    width: 100%;
-    padding: 15px;
-    border: none;
-    border-radius: 25px;
-    background: #61dafb;
-    color: #fff;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 18px;
-    transition: box-shadow 0.3s ease;
-    box-shadow: 8px 8px 16px #c5c8ce, -8px -8px 16px #ffffff;
-  }
-  
-  .login-btn:hover {
-    box-shadow: inset 8px 8px 16px #c5c8ce, inset -8px -8px 16px #ffffff;
-  }
-  
-  .error-message {
-    color: red;
-    text-align: center;
-  }
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  background: #f5f5f1;
+  /* Fond principal pour le style neumorphique */
+}
+
+.background-video-filter {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  filter: grayscale(1);
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #221f1f;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  z-index: 1;
+}
+
+.form {
+  position: relative;
+  background: #f5f5f1cc;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px #221f1f1a;
+  backdrop-filter: blur(4.4px);
+  -webkit-backdrop-filter: blur(4.4px);
+  border: 1px solid #f5f5f14d;
+  /* Placer le contenu au-dessus de la vidéo */
+  text-align: center;
+  padding: 20px;
+}
+
+h2 {
+  text-align: center;
+  margin: 1em;
+  color: #221f1f;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: bold;
+  text-align: left;
+}
+
+.form-group input {
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background: #e0e5ec;
+  box-shadow: inset 8px 8px 16px #c5c8ce, inset -8px -8px 16px #ffffff;
+  font-size: 16px;
+  color: #333;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.form-group input:focus {
+  box-shadow: inset 4px 4px 8px #c5c8ce, inset -4px -4px 8px #ffffff;
+}
+
+.error-message {
+  color: #f5f5f1;
+  background-color: #e50914;
+  border: 2px solid #f5f5f1;
+  padding: 15px 30px;
+  border-radius: 25px;  
+  text-align: center;
+}

@@ -51,13 +51,23 @@ const Movies: React.FC = () => {
 
   return (
     <div className="movies-container">
-      {/* Afficher le message de bienvenue */}
-      {isLoggedIn && <h1 className="welcome-message">Hello, {username} !</h1>}
-      <button className="btn-danger logout-button" onClick={handleLogout}>
-        Déconnexion
-      </button>
+      <header className="header">
+        <div className="sub-header">
+          <div className="welcome-div">
+            {isLoggedIn && <h1 className="welcome-message">Hello, {username} !</h1>}
+          </div>
+          <nav>
+            <button className="btn-header">
+              Mon Profil
+            </button>
+            <button className="btn-header" onClick={handleLogout}>
+              Déconnexion
+            </button>
+          </nav>
+        </div>
+      </header>
       <h2 className='movies-title'>Films Populaires</h2>
-      
+
       <div className="movies-grid">
         {movies.map((movie) => (
           <div key={movie.id} className="movie-card">

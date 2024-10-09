@@ -5,6 +5,9 @@ import Login from '../pages/Login';
 import Movies from '../pages/Movies';
 import Landing from '../pages/Landing';
 
+import '../styles/Header.css';
+
+
 const App: React.FC = () => {
   return (
     <Router>
