@@ -48,8 +48,6 @@ h2 {
   display: grid;
   grid-template-columns: repeat(5, minmax(200px, 1fr));
   gap: 20px;
-  max-width: 800px;
-  min-width: 80%;
 }
 
 /* Carte individuelle d'un film */
@@ -120,4 +118,18 @@ h2 {
 
 .search-input:focus {
   box-shadow: inset 4px 4px 8px #c5c8ce, inset -4px -4px 8px #ffffff;
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.header {
+  position: fixed;
+  top: 0;
+}
+
+.movies-main {
+  padding-top: 30px;
 }

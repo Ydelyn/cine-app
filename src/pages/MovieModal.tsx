@@ -3,11 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookmark as solidBookmark } from '@fortawesome/free-solid-svg-icons'; // Bookmark fill
 import { faBookmark as regularBookmark } from '@fortawesome/free-regular-svg-icons'; // Bookmark outline
 
-interface Genre {
-    id: number;
-    name: string;
-}
-
 interface ModalProps {
     isOpen: boolean;
     onClose: () => void;
@@ -19,7 +14,7 @@ interface ModalProps {
         vote_average: number;
         vote_count: number;
         release_date: string;
-        genres: Genre[]; // Ajout des genres
+        genres_ids?: number[]; // Ajout des genres
         trailerKey?: string; // Clé de la bande-annonce
     };
 }
@@ -81,9 +76,6 @@ const MovieModal: React.FC<ModalProps> = ({ isOpen, onClose, content }) => {
                     <p>{content.vote_count} votes</p>
                     <p>{content.release_date}</p>
                 </div>
-
-                {/* Affichage des genres */}
-                <p>Genres: {content.genres.map(genre => genre.name).join(', ')}</p>
 
                 {/* Icône Ajouter aux favoris */}
                 <button onClick={handleFavoriteClick} style={styles.favoriteButton}>
