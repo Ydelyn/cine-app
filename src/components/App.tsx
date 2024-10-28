@@ -5,6 +5,7 @@ import Login from '../pages/Login';
 import Movies from '../pages/Movies';
 import Landing from '../pages/Landing';
 import Profile from '../pages/Profile';
+import HelloWorld from '../pages/HelloWorld';
 
 import '../styles/Header.css';
 
@@ -18,6 +19,7 @@ const App: React.FC = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/movies" element={<Movies />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/helloWorld" element={<HelloWorld />} />
       </Routes>
     </Router>
   );
