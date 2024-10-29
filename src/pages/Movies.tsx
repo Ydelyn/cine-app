@@ -32,7 +32,6 @@ interface Language {
 }
 
 const Movies: React.FC = () => {
-  const [movies, setMovies] = useState<Movie[]>([]);
   const [genres, setGenres] = useState<Genre[]>([]);
   const [languages, setLanguages] = useState<Language[]>([]);
   const [filteredMovies, setFilteredMovies] = useState<Movie[]>([]);
@@ -90,9 +89,9 @@ const Movies: React.FC = () => {
     }
   }, [navigate]);
 
-  // Fonction pour récupérer les films avec tous les filtres
-  const fetchMovies = async () => {
-    let url = MOVIES_URL;
+  useEffect(() => {
+    if (isLoggedIn) {
+      let url = MOVIES_URL;
 
     // Ajouter les filtres à l'URL
     if (selectedGenre) {
@@ -113,23 +112,11 @@ const Movies: React.FC = () => {
     }
 
     try {
-      const response = await axios.get(url);
-      setMovies(response.data.results);
+      const response = axios.get(url);
       setFilteredMovies(response.data.results);
     } catch (error) {
       console.error("Erreur lors de la récupération des films :", error);
     }
-  };
-
-  useEffect(() => {
-    if (isLoggedIn) {
-      fetchMovies(); // Appel initial sans filtres
-    }
-  }, [isLoggedIn]);
-
-  useEffect(() => {
-    if (isLoggedIn) {
-      fetchMovies(); // Mettre à jour les films à chaque changement de filtre
     }
   }, [selectedYear, selectedGenre, selectedLanguage, isLoggedIn]);
 
