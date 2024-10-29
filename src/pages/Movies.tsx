@@ -5,7 +5,7 @@ import '../styles/Movies.css';
 import MovieModal from './MovieModal';
 
 const API_KEY = '7c6ba241ae896589000f37feed1efef7';
-const MOVIES_URL = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-EN&page=1`;
+const MOVIES_URL = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-EN&sort_by=popularity.desc`;
 const GENRES_URL = `https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}&language=en-EN`;
 const LANGUAGES_URL = `https://api.themoviedb.org/3/configuration/languages?api_key=${API_KEY}`;
 
@@ -92,7 +92,7 @@ const Movies: React.FC = () => {
 
   // Fonction pour récupérer les films avec tous les filtres
   const fetchMovies = async () => {
-    let url = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-EN&sort_by=popularity.desc`;
+    let url = MOVIES_URL;
 
     // Ajouter les filtres à l'URL
     if (selectedGenre) {
