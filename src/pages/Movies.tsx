@@ -91,34 +91,40 @@ const Movies: React.FC = () => {
 
   useEffect(() => {
     if (isLoggedIn) {
-      let url = MOVIES_URL;
+      const fetchMovies = async () => {
+        let url = MOVIES_URL;
 
-    // Ajouter les filtres à l'URL
-    if (selectedGenre) {
-      url += `&with_genres=${selectedGenre}`;
-    }
+        // Ajouter les filtres à l'URL
+        if (selectedGenre) {
+          url += `&with_genres=${selectedGenre}`;
+        }
 
-    // Ajouter l'année si elle est sélectionnée
-    if (selectedYear) {
-      const yearAsNumber = Number(selectedYear);
-      if (!isNaN(yearAsNumber)) {
-        url += `&primary_release_year=${yearAsNumber}`;
-      }
-    }
+        // Ajouter l'année si elle est sélectionnée
+        if (selectedYear) {
+          const yearAsNumber = Number(selectedYear);
+          if (!isNaN(yearAsNumber)) {
+            url += `&primary_release_year=${yearAsNumber}`;
+          }
+        }
 
-    // Ajouter la langue si elle est sélectionnée
-    if (selectedLanguage) {
-      url += `&with_original_language=${selectedLanguage}`;
-    }
+        // Ajouter la langue si elle est sélectionnée
+        if (selectedLanguage) {
+          url += `&with_original_language=${selectedLanguage}`;
+        }
 
-    try {
-      const response = axios.get(url);
-      setFilteredMovies(response.data.results);
-    } catch (error) {
-      console.error("Erreur lors de la récupération des films :", error);
-    }
+        try {
+          const response = await axios.get(url);
+          setFilteredMovies(response.data.results);
+        } catch (error) {
+          console.error("Erreur lors de la récupération des films :", error);
+        }
+      };
+
+      // Appeler la fonction asynchrone
+      fetchMovies();
     }
   }, [selectedYear, selectedGenre, selectedLanguage, isLoggedIn]);
+
 
   const handleLogout = () => {
     localStorage.removeItem('userLoggedIn');
@@ -227,10 +233,10 @@ const Movies: React.FC = () => {
 
         {/* Modale pour afficher les détails du film */}
         {isModalOpen && modalContent && (
-          <MovieModal 
+          <MovieModal
             isOpen={isModalOpen}
             content={modalContent}
-            onClose={closeModal} 
+            onClose={closeModal}
           />
         )}
       </main>
